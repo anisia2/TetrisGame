@@ -28,7 +28,7 @@ body{
     margin-bottom: 7%;
     margin: 0 auto;
     margin-top: 25px;
-    width: 40%;
+    width: 35%;
     height: 90%;
     background-color: black;
     position: relative;
@@ -63,7 +63,7 @@ body{
     }
     .canvas{
         margin: 0 auto;
-        width: 56%;
+        width: 60%;
     }
 }
   
@@ -73,7 +73,7 @@ body{
     }
     .canvas{
         margin: 0 auto;
-        width: 64%;
+        width: 75%;
     }
 }
   
