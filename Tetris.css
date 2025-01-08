@@ -9,7 +9,6 @@ body{
         linear-gradient(45deg, rgb(164, 203, 194) 25%, transparent 25%) 40px 40px;
     background-size: 80px 80px;
     background-color: rgb(105, 170, 155);
-    margin: 0;
     height: 100vh;
 }
 @font-face{
@@ -33,7 +32,6 @@ body{
     height: 85%;
     background-color: black;
     position: relative;
-    border-radius: 10px;
     align-items: center;
     justify-items: center;
 }
