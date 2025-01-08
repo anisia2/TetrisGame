@@ -1,5 +1,5 @@
 body{
-    display: flex;
+    display: flexbox;
     align-items: center;
     justify-items: center;
     background: 
@@ -26,8 +26,8 @@ body{
     border: 4px solid black;
     display: block;
     margin-bottom: 7%;
-    margin-left: 22%;
-    margin-right: 22%;
+    margin-left: 7%;
+    margin-right: 7%;
     margin-top: 25px;
     width: 56%;
     height: 85%;
