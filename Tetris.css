@@ -10,6 +10,7 @@ body{
     background-size: 80px 80px;
     background-color: rgb(105, 170, 155);
     height: 100vh;
+    margin: 0 auto;
 }
 @font-face{
     font-family: artwebsitefonts;
