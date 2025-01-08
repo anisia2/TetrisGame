@@ -34,8 +34,8 @@ body{
     background-color: black;
     position: relative;
     border-radius: 10px;
-    align-items: center;
-    justify-items: center;
+    margin: 0 auto;
+    
 }
 .model{
     width: 95%;
