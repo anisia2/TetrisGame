@@ -1,7 +1,7 @@
 body{
-    display: flex;
+    display: flexbox;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
     background: 
         linear-gradient(45deg, rgb(164, 203, 194) 25%, transparent 25%) 0 0,
         linear-gradient(45deg, rgb(164, 203, 194) 25%, transparent 25%) 40px 0,
@@ -22,21 +22,20 @@ body{
     color: black;
     padding: 5px auto;
 }
- .canvas {
+.canvas{
     border: 4px solid black;
-    margin: 20px auto;
+    display: block;
+    margin-bottom: 7%;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 25px;
     width: 56%;
     height: 85%;
     background-color: black;
     position: relative;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Added box-shadow */
-}
-@media (max-width: 600px) {
-    .canvas {
-        width: 90%; /* Make it smaller on mobile */
-        height: 70%; /* Adjust the height accordingly */
-    }
+    align-items: center;
+    justify-items: center;
 }
 .model{
     width: 95%;
