@@ -93,7 +93,7 @@ function drawMatrix(matrix, offset) {
 }
 
 function draw() {
-  context.fillStyle = '#000';
+  context.fillStyle = '#525163';
   context.fillRect(0, 0, canvas.width, canvas.height);
   drawMatrix(arena, { x: 0, y: 0 });
   drawMatrix(player.matrix, player.pos);
@@ -202,14 +202,12 @@ playerReset();
 update();
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'ArrowLeft') {
+  if (event.key === 'a') {
     playerMove(-1);
-  } else if (event.key === 'ArrowRight') {
+  } else if (event.key === 'd') {
     playerMove(1);
-  } else if (event.key === 'ArrowDown') {
+  } else if (event.key === 's') {
     playerDrop();
-  } else if (event.key === 'q') {
-    playerRotate(-1);
   } else if (event.key === 'w') {
     playerRotate(1);
   }
