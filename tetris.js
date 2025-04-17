@@ -202,14 +202,12 @@ playerReset();
 update();
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'ArrowLeft') {
+  if (event.key === 'a') {
     playerMove(-1);
-  } else if (event.key === 'ArrowRight') {
+  } else if (event.key === 'd') {
     playerMove(1);
-  } else if (event.key === 'ArrowDown') {
+  } else if (event.key === 's') {
     playerDrop();
-  } else if (event.key === 'q') {
-    playerRotate(-1);
   } else if (event.key === 'w') {
     playerRotate(1);
   }
