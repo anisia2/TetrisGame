@@ -1,4 +1,3 @@
-let isGameOver = false;
 const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
 context.scale(20, 20);
@@ -94,16 +93,10 @@ function drawMatrix(matrix, offset) {
 }
 
 function draw() {
-    context.fillStyle = '#525163';
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    drawMatrix(arena, { x: 0, y: 0 });
-    drawMatrix(player.matrix, player.pos);
-    drawInstructions();
-    drawScore();
-
-    if (isGameOver) {
-        drawGameOver(); // Draw game over message
-    }
+  context.fillStyle = '#525163';
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  drawMatrix(arena, { x: 0, y: 0 });
+  drawMatrix(player.matrix, player.pos);
 }
 
 function merge(arena, player) {
@@ -135,14 +128,15 @@ function playerMove(dir) {
 }
 
 function playerReset() {
-    const pieces = 'TJLOSZI';
-    player.matrix = createPiece(pieces[(pieces.length * Math.random()) | 0]);
-    player.pos.y = 0;
-    player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
-    if (collide(arena, player)) {
-        isGameOver = true; // Set the game over flag
-    }
+  const pieces = 'TJLOSZI';
+  player.matrix = createPiece(pieces[(pieces.length * Math.random()) | 0]);
+  player.pos.y = 0;
+  player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
+  if (collide(arena, player)) {
+    arena.forEach(row => row.fill(0));
+  }
 }
+
 function playerRotate(dir) {
   const pos = player.pos.x;
   let offset = 1;
@@ -208,21 +202,15 @@ playerReset();
 update();
 
 document.addEventListener('keydown', event => {
-  if (isGameOver) {
-        return; // Don't do anything if the game is over
-    }
-  if (event.key === 'a') {
+  if (event.key === 'ArrowLeft') {
     playerMove(-1);
-  } else if (event.key === 'd') {
+  } else if (event.key === 'ArrowRight') {
     playerMove(1);
-  } else if (event.key === 's') {
+  } else if (event.key === 'ArrowDown') {
     playerDrop();
+  } else if (event.key === 'q') {
+    playerRotate(-1);
   } else if (event.key === 'w') {
     playerRotate(1);
   }
 });
-function drawGameOver() {
-    context.fillStyle = 'red';
-    context.font = '2px Arial';
-    context.fillText("Game Over", 3.5, 10);
-}
